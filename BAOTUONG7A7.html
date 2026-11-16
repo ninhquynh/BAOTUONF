@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Tường Điện Tử: Người Gieo Nắng - Lớp 7A7 THCS Ngô Mây</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8B0000;
+            --primary-dark: #5c0000;
+            --accent: #D4AF37;
+            --accent-light: #f3e5ab;
+            --bg-cream: #FAF6ED;
+            --text-dark: #2C2C2C;
+            --card-bg: #FFFFFF;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Merriweather', serif; background-color: var(--bg-cream); color: var(--text-dark); line-height: 1.75; }
+        
+        /* HEADER & BANNER TRANG BÌA */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #a51c1c 100%);
+            color: white; text-align: center; padding: 3.5rem 1rem 2.5rem;
+            border-bottom: 6px solid var(--accent);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            position: relative;
+        }
+        .school-info { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent); margin-bottom: 0.6rem; font-weight: 700; }
+        h1.main-title { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.6rem; text-shadow: 2px 3px 6px rgba(0,0,0,0.35); }
+        .theme-subtitle { font-size: 1.2rem; font-style: italic; margin-bottom: 1.2rem; color: var(--accent-light); }
+        .meta-badge { display: inline-block; background: rgba(212, 175, 55, 0.22); border: 1px solid var(--accent); padding: 0.45rem 1.4rem; border-radius: 25px; font-family: 'Montserrat', sans-serif; font-size: 0.88rem; font-weight: 600; letter-spacing: 0.5px; }
+
+        /* CONTAINER */
+        .container { max-width: 1120px; margin: 0 auto; padding: 2.5rem 1.2rem; }
+
+        /* PHẦN TRANG BÌA & TRANH MINH HỌA */
+        .cover-section {
+            background: var(--card-bg); border-radius: 14px; padding: 2.2rem; margin-bottom: 2.5rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06); border: 1px solid #e2d9c5; text-align: center;
+        }
+        .cover-img { max-width: 100%; height: auto; border-radius: 10px; border: 4px solid var(--accent); margin-top: 1.2rem; box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+
+        /* LỜI NGỎ */
+        .editorial { background: var(--card-bg); border-left: 6px solid var(--primary); padding: 2.2rem; margin-bottom: 3rem; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.05); position: relative; }
+        .editorial h2 { font-family: 'Montserrat', sans-serif; color: var(--primary); font-size: 1.4rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
+        .editorial p { margin-bottom: 0.9rem; text-align: justify; }
+        .editorial p:last-child { margin-bottom: 0; }
+
+        /* MỤC LỤC TRANG BÁO (LƯỚI 3 CỘT CÂN ĐỐI 6 Ô) */
+        .section-heading { font-family: 'Montserrat', sans-serif; font-size: 1.75rem; color: var(--primary-dark); text-align: center; margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.5px; }
+        .section-sub { text-align: center; color: #666; font-style: italic; font-size: 0.95rem; margin-bottom: 2.2rem; position: relative; padding-bottom: 0.8rem; }
+        .section-sub::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 90px; height: 3px; background-color: var(--accent); border-radius: 2px; }
+
+        .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-bottom: 3.5rem; }
+        @media (max-width: 920px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .menu-grid { grid-template-columns: 1fr; } h1.main-title { font-size: 2rem; } }
+
+        .menu-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 16px rgba(0,0,0,0.07); transition: all 0.3s ease; cursor: pointer; display: flex; flex-direction: column; border: 1px solid #e2d9c5; }
+        .menu-card:hover { transform: translateY(-7px); box-shadow: 0 14px 28px rgba(139,0,0,0.16); border-color: var(--accent); }
+        
+        .card-img-wrapper { position: relative; height: 195px; overflow: hidden; background: #eee; }
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+        .menu-card:hover .card-img-wrapper img { transform: scale(1.06); }
+        .card-tag { position: absolute; top: 12px; left: 12px; background: var(--primary); color: white; padding: 0.3rem 0.7rem; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); z-index: 2; }
+
+        .card-content { padding: 1.3rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-title { font-family: 'Montserrat', sans-serif; font-size: 1.08rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.5rem; line-height: 1.4; }
+        .card-desc { font-size: 0.85rem; color: #555; margin-bottom: 1rem; line-height: 1.55; }
+        .card-btn { font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 0.45rem; transition: gap 0.2s; }
+        .menu-card:hover .card-btn { gap: 0.7rem; color: var(--primary-dark); }
+
+        /* PHẦN VIDEO TRI ÂN */
+        .video-section { background: var(--card-bg); border-radius: 14px; padding: 2.2rem; margin-bottom: 2rem; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border: 1px solid #e2d9c5; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
+        .video-box { background: #faf6ed; border-radius: 10px; padding: 1rem; border: 1px solid #e2d9c5; text-align: center; }
+        .video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.12); background: #000; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .video-title { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 700; color: var(--primary-dark); margin-top: 0.9rem; }
+
+        /* MODAL NỘI DUNG CHI TIẾT */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.68); backdrop-filter: blur(4px); align-items: center; justify-content: center; padding: 1rem; }
+        .modal-content { background: var(--card-bg); width: 100%; max-width: 1050px; max-height: 88vh; border-radius: 14px; overflow-y: auto; padding: 2.2rem; position: relative; box-shadow: 0 20px 45px rgba(0,0,0,0.35); border-top: 6px solid var(--primary); animation: modalFadeIn 0.25s ease; }
+        @keyframes modalFadeIn { from { opacity: 0; transform: translateY(-15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .close-modal { position: sticky; top: 0; float: right; font-size: 1.5rem; color: #555; cursor: pointer; background: #f0ebe1; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; border: 1px solid #ddd; }
+        .close-modal:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        
+        .modal-title { font-family: 'Montserrat', sans-serif; font-size: 1.55rem; color: var(--primary); margin-bottom: 0.4rem; padding-right: 2.5rem; line-height: 1.35; }
+        .modal-author { font-style: italic; color: #666; margin-bottom: 1.4rem; font-size: 0.92rem; border-bottom: 1px solid #eee; padding-bottom: 0.7rem; }
+        .modal-body p { margin-bottom: 1rem; text-align: justify; }
+
+        /* BỐ CỤC 2 CỘT TRONG MODAL */
+        .modal-two-col { display: grid; grid-template-columns: 1.35fr 0.85fr; gap: 2rem; align-items: start; }
+        .modal-equal-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+        @media (max-width: 768px) {
+            .modal-two-col, .modal-equal-col { grid-template-columns: 1fr; }
+            .modal-content { padding: 1.4rem; }
+        }
+
+        /* KHUNG CỘT ẢNH BÊN PHẢI */
+        .side-gallery { background: #faf6ed; padding: 14px; border-radius: 10px; border: 1px solid #e2d9c5; display: flex; flex-direction: column; gap: 1.1rem; }
+        .side-gallery-item img { width: 100%; height: 155px; object-fit: cover; border-radius: 6px; box-shadow: 0 3px 8px rgba(0,0,0,0.1); display: block; margin-bottom: 0.4rem; }
+        .side-gallery-item p { font-style: italic; font-size: 0.78rem; color: #555; line-height: 1.35; margin: 0; text-align: left; }
+
+        /* LƯỚI ALBUM PHÓNG SỰ ẢNH (TRANG 6) */
+        .photo-album-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.3rem; margin-top: 1.2rem; }
+        .album-card { background: #faf6ed; padding: 10px; border-radius: 8px; border: 1px solid #e2d9c5; text-align: center; transition: transform 0.2s; }
+        .album-card:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+        .album-card img { width: 100%; height: 185px; object-fit: cover; border-radius: 6px; margin-bottom: 0.5rem; display: block; }
+        .album-card p { font-style: italic; font-size: 0.82rem; color: #555; margin: 0; text-align: center; }
+
+        /* FOOTER */
+        footer { background: var(--primary-dark); color: white; text-align: center; padding: 2.2rem 1rem; margin-top: 3rem; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; border-top: 4px solid var(--accent); }
+        footer p { margin-bottom: 0.4rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="school-info">Trường THCS Ngô Mây • Chi Đội 7A7</div>
+        <h1 class="main-title">Báo Tường Điện Tử: Người Gieo Nắng</h1>
+        <div class="theme-subtitle">Chủ đề: “Chuyến đò sang sông – Tri ân thầy cô, lan tỏa yêu thương”</div>
+        <div class="meta-badge">Số Đặc Biệt Chào Mừng Ngày Nhà Giáo Việt Nam 20/11 • Năm học 2026 - 2027</div>
+    </header>
+
+    <div class="container">
+
+        <!-- TRANG 1: TRANH BÌA NGHỆ THUẬT -->
+        <div class="cover-section">
+            <h2 style="font-family: 'Montserrat', sans-serif; color: var(--primary); margin-bottom: 0.5rem;">Trang Bìa: Chuyến Đò Tri Thức</h2>
+            <p style="font-style: italic; color: #555; font-size: 0.95rem;">Cô giáo chủ nhiệm Việt Hương – Người lái đò thầm lặng chở những ước mơ tuổi thơ lớp 7A7 cập bến tri thức.</p>
+            <img src="https://lh3.googleusercontent.com/d/1cuFIn8BQqWlj0Hr6dks-I-sC42urmdfo" alt="Chuyến đò sang sông" class="cover-img">
+        </div>
+
+        <!-- TRANG 2: LỜI NGỎ BAN BIÊN TẬP -->
+        <div class="editorial">
+            <h2><i class="fa-solid fa-feather-pointed"></i> Lời Ngỏ Ban Biên Tập Lớp 7A7</h2>
+            <p>Kính thưa quý thầy cô giáo kính mến cùng toàn thể các bạn học sinh thân yêu! Tháng Mười Một lại về mang theo những cơn gió se lạnh đầu đông và hơi ấm dịu dàng của ngày hội truyền thống “Tôn sư trọng đạo” – Ngày Nhà giáo Việt Nam 20/11. Dưới mái trường THCS Ngô Mây thân thương, mỗi giờ lên lớp, mỗi nét phấn trắng trên bảng xanh và từng lời răn dạy ân cần của thầy cô đều trở thành ánh nắng ấm áp gieo mầm tri thức, nâng bước chúng em khôn lớn từng ngày.</p>
+            <p>Hòa chung không khí thi đua sôi nổi của Liên đội, tập thể học sinh lớp 7A7 trân trọng ra mắt ấn phẩm báo tường điện tử mang tên <strong>“Người Gieo Nắng”</strong>. Kính chúc quý thầy cô luôn dồi dào sức khỏe, vững tay chèo lái những chuyến đò tri thức cập bến tương lai!</p>
+        </div>
+
+        <!-- MỤC LỤC CÁC TRANG BÁO (6 Ô CÂN ĐỐI 2 HÀNG x 3 CỘT) -->
+        <h2 class="section-heading">Nội Dung Chi Tiết Các Trang Báo</h2>
+        <p class="section-sub">Nhấp vào từng chuyên mục bên dưới để khám phá các tác phẩm đặc sắc của tập thể 7A7</p>
+        
+        <div class="menu-grid">
+            <!-- Ô 1: Trang 3 - Tản văn -->
+            <div class="menu-card" onclick="openModal('modal-trang3')">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">CHUYÊN MỤC TẢN VĂN</span>
+                    <img src="https://lh3.googleusercontent.com/d/1m-aATBVbaDRJsyrPiiPD1VBcs-EUvS69" alt="Cô chủ nhiệm Việt Hương">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Chuyến Đò Sang Sông Và Bài Học Năm Nào</h3>
+                        <p class="card-desc">Tác giả: Bảo Ngân. Kỷ niệm sâu sắc về cô chủ nhiệm Việt Hương và bài học về lòng trung thực.</p>
+                    </div>
+                    <span class="card-btn">Đọc bài & Xem ảnh <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Ô 2: Trang 4 - Trò chuyện -->
+            <div class="menu-card" onclick="openModal('modal-trang4')">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">CHUYÊN MỤC TRÒ CHUYỆN</span>
+                    <img src="https://lh3.googleusercontent.com/d/1qlTzTfXGEKn0GFWavpf18wS6QXvgPzJI" alt="Phỏng vấn cô Việt Hương">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">3 Phút Trò Chuyện Cùng Cô Việt Hương</h3>
+                        <p class="card-desc">Tác giả: Phóng viên nhí 7A7. Lắng nghe tâm sự của cô và kỷ niệm vui dịp Trung thu.</p>
+                    </div>
+                    <span class="card-btn">Đọc phỏng vấn <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Ô 3: Trang 5 - Thơ ca -->
+            <div class="menu-card" onclick="openModal('modal-trang5')">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">CHUYÊN MỤC TIẾNG SƠN CA</span>
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="Thơ học trò">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Trang Thơ Học Trò: “Giờ Văn Thân Thương” & “Giờ Ra Chơi”</h3>
+                        <p class="card-desc">Tác giả: Ngọc Bích & Kế Phú. Những vần thơ trong trẻo viết về giờ học và sân trường.</p>
+                    </div>
+                    <span class="card-btn">Xem thơ ca <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Ô 4: Trang 6 - Thư viện phóng sự ảnh -->
+            <div class="menu-card" onclick="openModal('modal-trang6')">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">CHUYÊN MỤC PHÓNG SỰ ẢNH</span>
+                    <img src="https://lh3.googleusercontent.com/d/16pJ2-48AaeSRQlmfjmAZUMgsJcgEmTZq" alt="Phóng sự ảnh 7A7">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Thư Viện Phóng Sự Ảnh: Khoảnh Khắc Đáng Nhớ 7A7</h3>
+                        <p class="card-desc">Lưu giữ những hình ảnh đẹp nhất trong học tập, ngoại khóa và ngày hội tri ân 20/11.</p>
+                    </div>
+                    <span class="card-btn">Xem album ảnh <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Ô 5: Trang 7 - Đố vui trí tuệ -->
+            <div class="menu-card" onclick="openModal('modal-trang7')">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">GÓC THƯ GIÃN • ĐỐ VUI</span>
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Đố vui trí tuệ">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Đố Vui Trí Tuệ & Danh Ngôn Tôn Sư Trọng Đạo</h3>
+                        <p class="card-desc">Những câu đố vui thông minh về mái trường, thầy cô và các câu danh ngôn bất hủ.</p>
+                    </div>
+                    <span class="card-btn">Thử tài ngay <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Ô 6: Trang 8 - Sổ vàng tri ân -->
+            <div class="menu-card" onclick="openModal('modal-trang8')">
+                <div class="card-img-wrapper">
+                    <span class="card-tag">SỔ VÀNG TRI ÂN</span>
+                    <img src="https://lh3.googleusercontent.com/d/1LFxjXzBvb9Noe76u-yvlMB-mCShOYhmR" alt="Lời chúc 20/11">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h3 class="card-title">Nhịp Cầu Yêu Thương: Lời Chúc 20/11 Gửi Thầy Cô</h3>
+                        <p class="card-desc">Những dòng lưu bút chân thành của tập thể 7A7 gửi tặng quý thầy cô Trường THCS Ngô Mây.</p>
+                    </div>
+                    <span class="card-btn">Đọc lời chúc <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHẦN GÓC VIDEO TRI ÂN 20/11 -->
+        <div class="video-section">
+            <h2 style="font-family: 'Montserrat', sans-serif; color: var(--primary); text-align: center; margin-bottom: 0.5rem;"><i class="fa-solid fa-video"></i> Góc Video Tri Ân 20/11 - Tập Thể Lớp 7A7</h2>
+            <p style="text-align: center; color: #666; font-style: italic; font-size: 0.95rem; margin-bottom: 1.5rem;">Những thước phim kỷ niệm và lời chúc ý nghĩa gửi tặng quý thầy cô Trường THCS Ngô Mây</p>
+            
+            <div class="video-grid">
+                <div class="video-box">
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/1x-FDhfvn618NDCPEfjsWwREYOkwPtYAv/preview" allow="autoplay" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">Giờ Học Thân Thương! – Lớp 7A7</div>
+                </div>
+
+                <div class="video-box">
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/1TITuVG7LUmThSAH0EwCqGtynlAxDM21X/preview" allow="autoplay" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">Hoạt Động Văn Nghệ & Trò Chuyện Chào Mừng 20/11</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>BẢN QUYỀN THUỘC VỀ BAN BIÊN TẬP BÁO TƯỜNG ĐIỆN TỬ “NGƯỜI GIEO NẮNG” – LỚP 7A7</p>
+        <p>Trường THCS Ngô Mây • Chào mừng Ngày Nhà giáo Việt Nam 20/11 • Năm học 2026 - 2027</p>
+    </footer>
+
+    <!-- ================= CÁC CỬA SỔ ĐỌC BÀI CHI TIẾT (MODALS) ================= -->
+
+    <!-- MODAL 1: TRANG 3 (TẢN VĂN) -->
+    <div id="modal-trang3" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-trang3')">×</span>
+            <h2 class="modal-title">Chuyến Đò Sang Sông Và Bài Học Năm Nào</h2>
+            <div class="modal-author">Tác giả: Bảo Ngân – Chi đội 7A7</div>
+            
+            <div class="modal-two-col">
+                <div class="modal-body">
+                    <p>Ngày nhận lớp 7, nhìn thấy cô Việt Hương – giáo viên chủ nhiệm mới bước vào lớp với nụ cười rạng rỡ, tim tôi bỗng khẽ thắt lại. Cô chính là người từng dìu dắt chị gái tôi những năm cấp hai ngày trước. Nhìn dáng người thon gọn cùng phong thái vui vẻ, trẻ trung ấy, ít ai nghĩ cô Hương năm nay đã tầm trên bốn mươi tuổi. Qua những câu chuyện kể đầy tự hào của chị, tôi đã sớm hình dung về một cô giáo Việt Hương dạy Văn vô cùng tâm lý, lúc nào cũng dạt dào năng lượng và hết lòng vì học sinh.</p>
+                    
+                    <p>Được trực tiếp làm học trò của cô, tôi mới cảm nhận rõ nét nhất sự ấm áp và tận tâm ấy. Những giờ học Văn của cô chưa bao giờ nhàm chán; bằng giọng đọc truyền cảm và cách giảng bài sinh động, cô thổi hồn vào từng trang sách, khơi gợi trong chúng tôi tình yêu thương với con chữ. Thế nhưng, kỷ niệm sâu sắc nhất giữa tôi và cô lại gắn liền với một lần lầm lỡ. Hôm đó, vì chưa chuẩn bị bài kỹ và sợ điểm kém, tôi đã trót lén nhìn tài liệu trong giờ kiểm tra Văn. Cứ nghĩ hành động đó qua mắt được tất cả, nhưng ánh mắt bao dung của cô đã kịp nhận ra.</p>
+                    
+                    <blockquote style="border-left: 4px solid var(--accent); padding: 12px 1rem; margin: 1.2rem 0; font-style: italic; background: #fffdf5; border-radius: 0 6px 6px 0;">
+                        “Điểm số quan trọng, nhưng sự trung thực mới là điều theo con suốt cuộc đời.”
+                    </blockquote>
+                    
+                    <p>Cô không la mắng hay bêu riếu tôi trước lớp để làm tổn thương lòng tự trọng tuổi mới lớn. Thay vào đó, sau giờ học, cô gọi tôi lại góc bàn, nhẹ nhàng đặt tay lên vai và phân tích thiệt hơn. Giọng cô trầm ấm, vừa nghiêm khắc vừa xót xa: “Điểm số quan trọng, nhưng sự trung thực mới là điều theo con suốt cuộc đời.” Lời dạy chân tình ấy khiến tôi bật khóc vì hối hận và tự hứa sẽ không bao giờ tái phạm.</p>
+                </div>
+
+                <div class="side-gallery">
+                    <div class="side-gallery-item">
+                        <img src="https://lh3.googleusercontent.com/d/1GLLHnNCbOAeyGmEcg327NHI8PDyB1OR0" alt="Giờ học thân thương">
+                        <p>Ảnh 1: Giờ học Văn thân thương và đầy cảm hứng.</p>
+                    </div>
+                    <div class="side-gallery-item">
+                        <img src="https://lh3.googleusercontent.com/d/1m-aATBVbaDRJsyrPiiPD1VBcs-EUvS69" alt="Cô giáo chủ nhiệm Việt Hương">
+                        <p>Ảnh 2: Nụ cười hiền hậu của cô giáo chủ nhiệm Việt Hương bên món quà tri ân của tập thể lớp.</p>
+                    </div>
+                    <div class="side-gallery-item">
+                        <img src="https://lh3.googleusercontent.com/d/16pJ2-48AaeSRQlmfjmAZUMgsJcgEmTZq" alt="Khoảnh khắc tri ân">
+                        <p>Ảnh 3: Khoảnh khắc tri ân ấm áp trên bục giảng lớp 7A7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: TRANG 4 (PHỎNG VẤN NHANH) -->
+    <div id="modal-trang4" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-trang4')">×</span>
+            
+            <div style="text-align: center; margin-bottom: 1.5rem; border-bottom: 2px dashed var(--accent); padding-bottom: 0.8rem;">
+                <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 0.3rem;">❖ TRÒ CHUYỆN CÙNG CÔ VIỆT HƯƠNG</span>
+                <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.35rem; color: var(--primary-dark); font-weight: 800; text-transform: uppercase;">3 Phút Trò Chuyện Cùng Cô Giáo Chủ Nhiệm Việt Hương</h2>
+            </div>
+            
+            <div class="modal-two-col">
+                <div class="modal-body" style="font-size: 0.95rem; line-height: 1.75;">
+                    <p><strong>Phóng viên nhí 7A7:</strong> Thưa cô, điều gì khiến cô nhớ nhất và tự hào nhất khi đồng hành cùng tập thể lớp 7A7 chúng em ạ?</p>
+                    <p><strong>Cô giáo Việt Hương:</strong> Đó là ánh mắt hồn nhiên, tinh thần đoàn kết, sự lễ phép và nỗ lực vươn lên của các con trong từng tiết học cũng như các phong trào của Liên đội.</p>
+                    <p><strong>Phóng viên nhí 7A7:</strong> Dạ, con xin thay mặt các bạn gửi lời cảm ơn những chia sẻ chân thành của cô ạ! Để bài phỏng vấn thêm phần trọn vẹn, cô có thể chia sẻ một kỷ niệm vui hoặc một ấn tượng đặc biệt nhất của cô về lớp 7A7 trong dịp Trung thu vừa qua được không ạ?</p>
+                    <p><strong>Cô giáo Việt Hương:</strong> Nhắc đến Trung thu thì cô nhớ hoài không quên! Cô ấn tượng nhất là lúc cả lớp cùng chung tay chuẩn bị mâm cỗ và tự tay trang trí lớp. Dù có lúc tranh luận sôi nổi xem bày bánh thế nào cho đẹp, nhưng cuối cùng sản phẩm lại vô cùng hoành tráng. Nhìn ánh mắt lấp lánh, nụ cười rạng rỡ của các con khi phá cỗ, hay lúc rước đèn cùng nhau, cô thấy lớp mình đoàn kết và đáng yêu biết bao!</p>
+                    <p><strong>Phóng viên nhí 7A7:</strong> Nhân dịp Ngày Nhà giáo Việt Nam 20/11, cô có lời nhắn nhủ đặc biệt nào gửi tới đại gia đình 7A7 không ạ?</p>
+                    <p><strong>Cô giáo Việt Hương:</strong> Cô mong các con luôn giữ một trái tim trung thực, biết yêu thương, sẻ chia với bạn bè, chăm ngoan học tốt và không ngừng nuôi dưỡng những ước mơ đẹp cho tương lai!</p>
+                </div>
+
+                <div class="side-gallery">
+                    <div class="side-gallery-item">
+                        <img src="https://lh3.googleusercontent.com/d/1cn9GHcHmTcVg5yRJrHl5dihd5K9Mv0-N" alt="Lớp học 7A7">
+                        <p>Ảnh 1: Tiết học sôi nổi và chăm chú của tập thể lớp 7A7 dưới sự hướng dẫn của cô chủ nhiệm.</p>
+                    </div>
+                    <div class="side-gallery-item">
+                        <img src="https://lh3.googleusercontent.com/d/1qlTzTfXGEKn0GFWavpf18wS6QXvgPzJI" alt="Mâm cỗ Trung thu lớp 7A7">
+                        <p>Ảnh 2: Mâm cỗ Trung thu rực rỡ và đầy ắp tiếng cười do chính tay các em học sinh 7A7 chuẩn bị.</p>
+                    </div>
+                    <div class="side-gallery-item">
+                        <img src="https://lh3.googleusercontent.com/d/15ZYFXkbuJuJWuSLGIfERBKbsYTPY55A" alt="Vui Tết Trung thu">
+                        <p>Ảnh 3: Niềm vui rạng rỡ ngày hội Trung thu của lớp 7A7.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: TRANG 5 (TRANG THƠ HỌC TRÒ) -->
+    <div id="modal-trang5" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-trang5')">×</span>
+            
+            <h2 class="modal-title" style="text-align: center; margin-bottom: 0.4rem;">Trang Thơ Học Trò</h2>
+            <div class="modal-author" style="text-align: center; border-bottom: none; margin-bottom: 1.5rem;">
+                Tuyển tập thơ đặc sắc chào mừng Ngày Nhà giáo Việt Nam 20/11 – Chi đội 7A7
+            </div>
+            
+            <div class="modal-equal-col">
+                <!-- CỘT 1: BÀI THƠ 05 -->
+                <div style="background: #fffdf5; padding: 20px; border-radius: 10px; border: 1px solid #e2d9c5; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                    <div style="text-align: center; margin-bottom: 1.2rem; border-bottom: 2px dashed #d4af37; padding-bottom: 0.8rem;">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 0.3rem;">❖ TÁC PHẨM 05 • THƠ</span>
+                        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: var(--primary-dark); font-weight: 800; text-transform: uppercase;">Giờ Văn Thân Thương</h3>
+                        <p style="font-style: italic; font-size: 0.85rem; color: #666; margin-top: 0.2rem;">Tác giả: Ngọc Bích – Chi đội 7A7</p>
+                    </div>
+
+                    <div style="font-style: italic; line-height: 1.85; text-align: center; font-size: 0.95rem;">
+                        <p style="margin-bottom: 1rem;">
+                            Tiếng trống trường vang lên<br>
+                            Giờ Văn cô bước tới<br>
+                            Nụ cười hiền mến thương.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            Lời cô đọc trầm ấm<br>
+                            Đưa bài thơ bay xa<br>
+                            Trang sách xòe hoa nở<br>
+                            Rộn rã tiếng chim ca.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            Bao bài học làm người<br>
+                            Cô ân cần nhắn gửi<br>
+                            Bài văn tràn sức sống<br>
+                            Nối những bờ niềm vui.
+                        </p>
+                        <p style="margin-bottom: 0.8rem;">
+                            Giờ học trôi qua nhanh<br>
+                            Lòng em đầy lưu luyến<br>
+                            Yêu sao từng trang sách<br>
+                            Yêu giọng cô dịu hiền.
+                        </p>
+                        <p style="font-size: 1.1rem; color: var(--primary); margin-top: 0.5rem;">❦ &nbsp; ❧</p>
+                    </div>
+                </div>
+
+                <!-- CỘT 2: BÀI THƠ 06 -->
+                <div style="background: #fffdf5; padding: 20px; border-radius: 10px; border: 1px solid #e2d9c5; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                    <div style="text-align: center; margin-bottom: 1.2rem; border-bottom: 2px dashed #d4af37; padding-bottom: 0.8rem;">
+                        <span style="font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 0.3rem;">❖ TÁC PHẨM 06 • THƠ</span>
+                        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: var(--primary-dark); font-weight: 800; text-transform: uppercase;">Rộn Rã Giờ Ra Chơi</h3>
+                        <p style="font-style: italic; font-size: 0.85rem; color: #666; margin-top: 0.2rem;">Tác giả: Kế Phú – Chi đội 7A7</p>
+                    </div>
+
+                    <div style="font-style: italic; line-height: 1.85; text-align: center; font-size: 0.95rem;">
+                        <p style="margin-bottom: 1rem;">
+                            Hồi chuông trường vang lên,<br>
+                            Giờ ra chơi đến rồi!<br>
+                            Bao âu lo bài vở,<br>
+                            Theo gió bay đi đâu.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            Sân trường bừng nắng mới,<br>
+                            Rộn rã tiếng cười vui.<br>
+                            Nhóm nhảy dây giòn giã,<br>
+                            Nhóm đá cầu ngược xuôi.
+                        </p>
+                        <p style="margin-bottom: 1rem;">
+                            Gốc bàng xòe bóng mát,<br>
+                            Mấy bạn ngồi tâm sự.<br>
+                            Nụ cười vương ánh mắt,<br>
+                            Trang sách khép hờ mi.
+                        </p>
+                        <p style="margin-bottom: 0.8rem;">
+                            Thời gian trôi nhanh quá,<br>
+                            Chuông lại báo vào lớp.<br>
+                            Tiết học mới bắt đầu,<br>
+                            Lòng vui phơi phới sao!
+                        </p>
+                        <p style="font-size: 1.1rem; color: var(--primary); margin-top: 0.5rem;">❦ &nbsp; ❧</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; text-align: center; background: #fff8e6; padding: 12px; border-radius: 8px; border: 1px solid var(--accent);">
+                <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 0.2rem;">
+                    “Muốn sang thì bắc cầu Kiều – Muốn con hay chữ thì yêu lấy thầy.”
+                </p>
+                <p style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 1px;">
+                    Ban Biên Tập Báo Tường Điện Tử 7A7 • Trường THCS Ngô Mây • Năm học 2026 - 2027
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: TRANG 6 (THƯ VIỆN PHÓNG SỰ ẢNH) -->
+    <div id="modal-trang6" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal-trang6')">×</span>
+            <h2 class="modal-title">Thư Viện Phóng Sự Ảnh: Khoảnh Khắc Đáng Nhớ 7A7</h2>
+            <div class="modal-author">Ban Biên Tập Lớp 7A7 – Trường THCS Ngô Mây</div>
+            <div class="modal-body">
+                <p><strong>Nhịp sống hoạt động tập thể:</strong> Tập thể lớp 7A7 rạng rỡ bên bảng trang trí lớp học, các tiết học hăng say và những hoạt động ngoại khóa đầy ắp tiếng cười.</p>
+                
+                <div class="photo-album-grid">
+                    <div class="album-card">
+                        <img src="https://lh3.googleusercontent.com/d/1GLLHnNCbOAeyGmEcg327NHI8PDyB1OR0" alt="Giờ học hăng say">
+                        <p>Khoảnh khắc giờ học Văn hăng say, sôi nổi</p>
+                    </div>
+
+                    <div class="album-card">
+                        <img src="https://lh3.googleusercontent.com/d/1cn9GHcHmTcVg5yRJrHl5dihd5K9Mv0-N" alt="Không gian lớp học 7A7">
+                        <p>Không gian lớp học đoàn kết, thân thương 7A7</p>
+                    </div>
+
+                    <div class="album-card">
+                        <img src="https://lh3.googleusercontent.com/d/1qlTzTfXGEKn0GFWavpf18wS6QXvgPzJI" alt="Trang trí Tết Trung thu">
+                        <p>Trang trí bảng và chuẩn bị mâm cỗ Tết Trung thu</p>
+                    </div>
+
+                    <div class="album-card">
+                        <img src="https://lh3.googleusercontent.com/d/17KJepvJBXvlLXp03Cm3zY-XJ2bfl7-bB" alt="Niềm vui phá cỗ">
+                        <p>Niềm vui phá cỗ rạng rỡ cùng bạn bè</p>
+                    </div>
+
+                    <div class="album-card">
+                        <img src="https://lh3.googleusercontent.com/d/16pJ2-48AaeSRQlmfjmAZUMgsJcgEmTZq" alt="Tri ân cô giáo">
+                        <p>Tri ân cô giáo chủ nhiệm trên bục giảng</p>
+                    </div>
+
+                    <div class="album-card">
+                        <img src="https://lh3.googleusercontent.com/d/1m-aATBVbaDRJsyrPiiPD1VBcs-EUvS69" alt="Nụ cười 20/11">
+                        <p>Nụ cười hiền hậu của cô bên món quà của lớp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 5: TRANG 7 (ĐỐ VUI TRÍ TUỆ & DANH NGÔN) -->
+    <div id="modal-trang7" class="modal">
+        <div class="modal-content" style="max-width: 820px;">
+            <span class="close-modal" onclick="closeModal('modal-trang7')">×</span>
+            <h2 class="modal-title">Đố Vui Trí Tuệ & Danh Ngôn Tôn Sư Trọng Đạo</h2>
+            <div class="modal-author">Chuyên mục Giải trí – Học mà chơi của Chi đội 7A7</div>
+            <div class="modal-body">
+                <div style="background: #fffdf5; padding: 16px; border-radius: 8px; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                    <p style="margin-bottom: 0.4rem;"><strong>Câu 1:</strong> Con gì không có chân mà vẫn đưa bao thế hệ học trò cập bến tương lai?</p>
+                    <p style="color: var(--primary); margin-bottom: 0;"><em>➔ Đáp án: Con đò tri thức.</em></p>
+                </div>
+
+                <div style="background: #fffdf5; padding: 16px; border-radius: 8px; border-left: 4px solid var(--primary); margin-bottom: 1rem;">
+                    <p style="margin-bottom: 0.4rem;"><strong>Câu 2:</strong> Nghề nào được cố Thủ tướng Phạm Văn Đồng ví là “nghề cao quý nhất trong các nghề cao quý”?</p>
+                    <p style="color: var(--primary); margin-bottom: 0;"><em>➔ Đáp án: Nghề dạy học.</em></p>
+                </div>
+
+                <div style="background: #fffdf5; padding: 16px; border-radius: 8px; border-left: 4px solid var(--primary); margin-bottom: 1.5rem;">
+                    <p style="margin-bottom: 0.4rem;"><strong>Câu 3:</strong> Cái gì càng gọt càng ngắn, càng viết càng mòn nhưng lại vẽ nên bao ước mơ tươi đẹp?</p>
+                    <p style="color: var(--primary); margin-bottom: 0;"><em>➔ Đáp án: Cây bút chì / Viên phấn trắng.</em></p>
+                </div>
+
+                <h4 style="color: var(--primary); margin-bottom: 0.6rem; font-family: 'Montserrat', sans-serif;">Danh Ngôn Bất Hủ Về Thầy Cô:</h4>
+                <blockquote style="font-style: italic; color: #444; background: #faf6ed; padding: 14px; border-radius: 8px; border: 1px solid #e2d9c5;">
+                    “Người thầy cầm tay, mở ra trí óc và chạm đến trái tim.” – Khuyết danh
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 6: TRANG 8 (SỔ VÀNG TRI ÂN) -->
+    <div id="modal-trang8" class="modal">
+        <div class="modal-content" style="max-width: 820px;">
+            <span class="close-modal" onclick="closeModal('modal-trang8')">×</span>
+            <h2 class="modal-title">Nhịp Cầu Yêu Thương: Lời Chúc 20/11 Gửi Thầy Cô</h2>
+            <div class="modal-author">Tập thể học sinh lớp 7A7 – Trường THCS Ngô Mây</div>
+            <div class="modal-body">
+                <div style="background: #fffdf5; padding: 28px; border-radius: 12px; border: 2px solid var(--accent); text-align: center; font-style: italic; font-size: 1.05rem; line-height: 1.85;">
+                    <p>“Nhân ngày Nhà giáo Việt Nam 20/11, tập thể học sinh lớp 7A7 kính chúc quý thầy cô Trường THCS Ngô Mây luôn dồi dào sức khỏe, hạnh phúc, vững tay chèo lái những chuyến đò tri thức và mãi giữ ngọn lửa nhiệt huyết yêu nghề!”</p>
+                    <p style="margin-bottom: 0; font-weight: bold; color: var(--primary); font-style: normal; font-family: 'Montserrat', sans-serif;">— Tập thể Chi đội 7A7 kính tặng —</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT ĐIỀU KHIỂN -->
+    <script>
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>
